@@ -1,7 +1,3 @@
-function notImplemented() {
-  throw new Error("Корзина ещё не реализована. Сначала прочитайте тесты.");
-}
-
 function addToCart(cart, product, quantity) {
   const availableStock = product.stock;
   if (quantity <= 0) {
