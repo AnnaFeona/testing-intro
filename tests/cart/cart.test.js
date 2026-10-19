@@ -32,56 +32,56 @@ describe("addToCart", () => {
   });
 });
 
-// describe('changeQuantity', () => {
-//   const cart = [{ ...headphones, quantity: 1 }];
+describe('changeQuantity', () => {
+  const cart = [{ ...headphones, quantity: 1 }];
 
-//   test('меняет количество товара в корзине', () => {
-//     expect(changeQuantity(cart, 1, 4)).toEqual([{ ...headphones, quantity: 4 }]);
-//   });
+  test('меняет количество товара в корзине', () => {
+    expect(changeQuantity(cart, 1, 4)).toEqual([{ ...headphones, quantity: 4 }]);
+  });
 
-//   test('не принимает нулевое количество', () => {
-//     expect(() => changeQuantity(cart, 1, 0)).toThrow(RangeError);
-//   });
+  test('не принимает нулевое количество', () => {
+    expect(() => changeQuantity(cart, 1, 0)).toThrow(RangeError);
+  });
 
-//   test('не позволяет указать количество больше остатка', () => {
-//     expect(() => changeQuantity(cart, 1, 9)).toThrow(RangeError);
-//   });
+  test('не позволяет указать количество больше остатка', () => {
+    expect(() => changeQuantity(cart, 1, 9)).toThrow(RangeError);
+  });
 
-//   test('оставляет корзину без изменений для отсутствующего товара', () => {
-//     expect(changeQuantity(cart, 999, 2)).toEqual(cart);
-//   });
-// });
+  test('оставляет корзину без изменений для отсутствующего товара', () => {
+    expect(changeQuantity(cart, 999, 2)).toEqual(cart);
+  });
+});
 
-// describe('removeFromCart', () => {
-//   test('удаляет выбранный товар', () => {
-//     const cart = [{ ...headphones, quantity: 1 }, { ...lamp, quantity: 2 }];
-//     expect(removeFromCart(cart, 1)).toEqual([{ ...lamp, quantity: 2 }]);
-//   });
+describe('removeFromCart', () => {
+  test('удаляет выбранный товар', () => {
+    const cart = [{ ...headphones, quantity: 1 }, { ...lamp, quantity: 2 }];
+    expect(removeFromCart(cart, 1)).toEqual([{ ...lamp, quantity: 2 }]);
+  });
 
-//   test('возвращает пустую корзину после удаления единственного товара', () => {
-//     expect(removeFromCart([{ ...headphones, quantity: 1 }], 1)).toEqual([]);
-//   });
+  test('возвращает пустую корзину после удаления единственного товара', () => {
+    expect(removeFromCart([{ ...headphones, quantity: 1 }], 1)).toEqual([]);
+  });
 
-//   test('не меняет состав корзины, если товара в ней нет', () => {
-//     const cart = [{ ...headphones, quantity: 1 }];
-//     expect(removeFromCart(cart, 999)).toEqual(cart);
-//   });
-// });
+  test('не меняет состав корзины, если товара в ней нет', () => {
+    const cart = [{ ...headphones, quantity: 1 }];
+    expect(removeFromCart(cart, 999)).toEqual(cart);
+  });
+});
 
-// describe('calculateCartSubtotal', () => {
-//   test('возвращает ноль для пустой корзины', () => {
-//     expect(calculateCartSubtotal([])).toBe(0);
-//   });
+describe('calculateCartSubtotal', () => {
+  test('возвращает ноль для пустой корзины', () => {
+    expect(calculateCartSubtotal([])).toBe(0);
+  });
 
-//   test('учитывает количество одного товара', () => {
-//     expect(calculateCartSubtotal([{ ...lamp, quantity: 2 }])).toBe(55800);
-//   });
+  test('учитывает количество одного товара', () => {
+    expect(calculateCartSubtotal([{ ...lamp, quantity: 2 }])).toBe(55800);
+  });
 
-//   test('суммирует несколько разных товаров', () => {
-//     const cart = [{ ...headphones, quantity: 1 }, { ...lamp, quantity: 2 }];
-//     expect(calculateCartSubtotal(cart)).toBe(105700);
-//   });
-// });
+  test('суммирует несколько разных товаров', () => {
+    const cart = [{ ...headphones, quantity: 1 }, { ...lamp, quantity: 2 }];
+    expect(calculateCartSubtotal(cart)).toBe(105700);
+  });
+});
 
 // describe('calculateOrderTotal', () => {
 //   test('добавляет доставку к маленькому заказу без промокода', () => {
